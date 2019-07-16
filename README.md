@@ -1,6 +1,6 @@
 微信小程序接口：
   java+mysql
-层次接口：
+层次：
   service+dao+util+model
 过程：
   jdk+tomact+mysql+navicat+myeclipse安装
