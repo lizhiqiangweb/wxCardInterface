@@ -1,25 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>JsonTest</display-name>
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
-  
-  <servlet>
-      <servlet-name>JsonServlet</servlet-name>
-      <servlet-class>com.service.JsonServlet</servlet-class>
-  </servlet>
-  <servlet>
-      <servlet-name>JsonServlet2</servlet-name>
-      <servlet-class>com.service.JsonServlet2</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>JsonServlet</servlet-name>
-      <url-pattern>/getJson</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-      <servlet-name>JsonServlet2</servlet-name>
-      <url-pattern>/setJson</url-pattern>
-  </servlet-mapping>
-  
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>JsonTest</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>JsonServlet</servlet-name>
+		<servlet-class>com.service.JsonServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>JsonServlet2</servlet-name>
+		<servlet-class>com.service.JsonServlet2</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>CompanyServlet</servlet-name>
+		<servlet-class>com.service.CompanyServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>getCompanyServlet</servlet-name>
+		<servlet-class>com.service.getCompanyServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>WechatServlet</servlet-name>
+        <servlet-class>com.service.WechatServlet</servlet-class>
+    </servlet>
+	
+	<servlet-mapping>
+		<servlet-name>JsonServlet</servlet-name>
+		<url-pattern>/getJson</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>JsonServlet2</servlet-name>
+		<url-pattern>/setJson</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>CompanyServlet</servlet-name>
+		<url-pattern>/setCompany</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>getCompanyServlet</servlet-name>
+		<url-pattern>/getCompany</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>characterFilter</filter-name>
+		<filter-class>com.util.CharacterFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>characterFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>WechatServlet</servlet-name>
+        <url-pattern>/WechatServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>

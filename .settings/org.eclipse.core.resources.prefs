@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//WebRoot/index.jsp=UTF-8
 encoding//src/com/service/JsonServlet.java=UTF-8
+encoding//src/com/service/getCompanyServlet.java=UTF-8

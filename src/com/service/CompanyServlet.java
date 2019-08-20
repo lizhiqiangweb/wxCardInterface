@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class JsonServlet2 extends HttpServlet {
+public class CompanyServlet extends HttpServlet {
     public void destroy() {
         super.destroy(); 
     }
@@ -26,29 +26,21 @@ public class JsonServlet2 extends HttpServlet {
          Connection conn = null;
          PreparedStatement stmt = null;
          ResultSet rs = null;
-         String name=request.getParameter("name");
-         String post=request.getParameter("post");
-         String company=request.getParameter("company");
-         String phone=request.getParameter("phone");
-         String email=request.getParameter("phone");
-         String address=request.getParameter("address");
-         String wxPhone=request.getParameter("wxPhone");
-         String qqPhone=request.getParameter("qqPhone");
+         String companyName=request.getParameter("companyName");
+         String companyWeb=request.getParameter("companyWeb");
+         String companyCase=request.getParameter("companyCase");
+         String companyDis=request.getParameter("companyDis");
          String drive = "com.mysql.cj.jdbc.Driver";
          try{
              Class.forName(drive);
              conn = DriverManager.getConnection("jdbc:mysql://120.27.61.214:3306/test1?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai","root","tangqing@123");
              System.out.println("数据库连接成功");
-             String sql="INSERT INTO tb_user (name,postd,company,phone,email,adress,wxPhone,qqPhone) VALUES(?,?,?,?,?,?,?,?)";
+             String sql="INSERT INTO tb_company (companyName,companyWeb,companyCase,companyDis) VALUES(?,?,?,?)";
              stmt = conn.prepareStatement(sql);
-             stmt.setString(1,name);
-             stmt.setString(2,post);
-             stmt.setString(3,company);
-             stmt.setString(4,phone);
-             stmt.setString(5,email);
-             stmt.setString(6,address);
-             stmt.setString(7,wxPhone);
-             stmt.setString(8,qqPhone);
+             stmt.setString(1,companyName);
+             stmt.setString(2,companyWeb);
+             stmt.setString(3,companyCase);
+             stmt.setString(4,companyDis);
              stmt.executeUpdate();
              System.out.println(sql);
 //             System.out.println("success");

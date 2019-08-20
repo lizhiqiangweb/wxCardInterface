@@ -3,9 +3,9 @@ package com.util;
 import java.sql.*;
 
 public class DBconn {
-    static String url = "jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC"; 
+    static String url = "jdbc:mysql://120.27.61.214:3306/test1?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai"; 
     static String username = "root"; 
-    static String password = "123456"; 
+    static String password = "tangqing@123"; 
     static Connection  conn = null;
     static ResultSet rs = null;
     static PreparedStatement ps =null;
@@ -27,7 +27,6 @@ public class DBconn {
             System.out.println("sql数据库增删改异常");
             e.printStackTrace();
         }
-        
         return i;
     }
     public static ResultSet selectSql(String sql){

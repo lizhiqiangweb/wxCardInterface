@@ -15,7 +15,7 @@ import com.dao.DaoImpl;
 import com.model.TestCase;
 import com.model.TestCaseTotal;
 
-public class JsonServlet extends HttpServlet {
+public class getCompanyServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,21 +23,16 @@ public class JsonServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
         DaoImpl testDaoImpl=new DaoImpl();
-        List<TestCase> list=testDaoImpl.getCaseAll();
+        List<TestCase> list=testDaoImpl.getCompany();
         List<TestCase> list1 =new ArrayList<>();
         int size =list.size();
         TestCase testCase;
         for(int i=0;i<size;i++){
             testCase=new TestCase();
-            testCase.setId(list.get(i).getId());
-            testCase.setName(list.get(i).getName());
-            testCase.setPost(list.get(i).getPost());
-            testCase.setCompany(list.get(i).getCompany());
-            testCase.setPhone(list.get(i).getPhone());
-            testCase.setEmail(list.get(i).getEmail());
-            testCase.setAdress(list.get(i).getAdress());
-            testCase.setWxPhone(list.get(i).getWxPhone());
-            testCase.setQqPhone(list.get(i).getQqPhone());           
+            testCase.setCompanyName(list.get(i).getCompanyName());
+            testCase.setCompanyWeb(list.get(i).getCompanyWeb());
+            testCase.setCompanyCase(list.get(i).getCompanyCase());
+            testCase.setCompanyDis(list.get(i).getCompanyDis());
             list1.add(testCase);
         }
         
